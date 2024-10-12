@@ -44,7 +44,6 @@ ro.vendor.mediatek.platform=MT6877
 vendor.connsys.driver.ready=no
 ro.vendor.connsys.dedicated.log=1
 ro.vendor.bt.platform=6877
-persist.vendor.connsys.coredump.mode=2
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
