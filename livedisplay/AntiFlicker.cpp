@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.1-service-mt6877"
+#define LOG_TAG "vendor.lineage.livedisplay@2.1-service-oplus"
 
 #include <android-base/file.h>
 #include <android-base/strings.h>

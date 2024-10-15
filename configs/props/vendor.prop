@@ -44,6 +44,7 @@ ro.vendor.mediatek.platform=MT6877
 vendor.connsys.driver.ready=no
 ro.vendor.connsys.dedicated.log=1
 ro.vendor.bt.platform=6877
+persist.vendor.connsys.coredump.mode=2
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
@@ -277,16 +278,23 @@ ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc16sp-pr6-V1.1
 ro.vendor.wifi.sap.interface=ap0
 ro.vendor.mtk_wappush_support=1
 ro.vendor.ap_info_monitor=0
+ro.vendor.wlan.standalone.log=y
 ro.vendor.wlan.gen=gen4m
 ro.vendor.wlan.chrdev=wmt_chrdev_wifi
-persist.vendor.connsys.coredump.mode=0
+ro.vendor.connsys.dedicated.log.port=bt,wifi,ics,btmcu,wifimcu
+persist.vendor.connsys.coredump.mode=2
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.patch.version=-1
 persist.vendor.connsys.dynamic.dump=0
 vendor.connsys.driver.ready=no
+ro.vendor.connsys.dedicated.log=1
 ro.vendor.wifi.sap.concurrent.iface=ap1
 
 # Zram
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=2
+
+
+# default refresh rate threshold
+debug.sf.frame_rate_multiple_threshold=0

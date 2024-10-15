@@ -33,6 +33,7 @@ dalvik.vm.minidebuginfo=true
 dalvik.vm.dex2oat-minidebuginfo=true
 
 # Dexopt
+pm.dexopt.first-boot=quicken
 pm.dexopt.boot=verify
 pm.dexopt.boot-after-ota=verify
 pm.dexopt.post-boot=extract
@@ -42,6 +43,7 @@ pm.dexopt.install-bulk=speed-profile
 pm.dexopt.install-bulk-secondary=verify
 pm.dexopt.install-bulk-downgraded=verify
 pm.dexopt.install-bulk-secondary-downgraded=extract
+pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.ab-ota=speed-profile
 pm.dexopt.inactive=verify
 pm.dexopt.cmdline=verify
@@ -139,7 +141,7 @@ ro.sys.usb.bicr=no
 ro.sys.usb.charging.only=yes
 qemu.hw.mainkeys=0
 
-# Wi-Fi
+# WiFi
 wifi.direct.interface=p2p0
 wifi.interface=wlan0
 ro.mediatek.wlan.wsc=1

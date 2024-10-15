@@ -1,0 +1,2 @@
+type mwis_service, service_manager_type;
+type wfo_service, service_manager_type;

@@ -21,14 +21,6 @@
     </interface>
 </hal>
 <hal format="hidl" optional="true">
-    <name>vendor.oplus.hardware.wifi.supplicant</name>
-    <version>2.0</version>
-    <interface>
-        <name>IOplusSupplicant</name>
-        <instance>default</instance>
-    </interface>
-</hal>
-<hal format="hidl" optional="true">
     <name>android.hardware.audio</name>
     <version>7.0</version>
     <interface>
@@ -113,6 +105,22 @@
     <version>1.0-3</version>
     <interface>
         <name>IUsb</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>android.hardware.wifi.hostapd</name>
+    <version>1.0-3</version>
+    <interface>
+        <name>IHostapd</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>android.hardware.wifi</name>
+    <version>1.0-6</version>
+    <interface>
+        <name>IWifi</name>
         <instance>default</instance>
     </interface>
 </hal>
@@ -461,6 +469,14 @@
         <name>IOplusRadio</name>
         <instance>oplus_slot1</instance>
         <instance>oplus_slot2</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oplus.hardware.wifi.supplicant</name>
+    <version>2.0</version>
+    <interface>
+        <name>IOplusSupplicant</name>
+        <instance>default</instance>
     </interface>
 </hal>
 <hal format="hidl" optional="true">

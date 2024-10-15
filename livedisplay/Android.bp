@@ -13,9 +13,9 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.1-service-mt6877",
-    init_rc: ["vendor.lineage.livedisplay@2.1-service-mt6877.rc"],
-    vintf_fragments: ["vendor.lineage.livedisplay@2.1-service-mt6877.xml"],
+    name: "vendor.lineage.livedisplay@2.1-service-oplus",
+    init_rc: ["vendor.lineage.livedisplay@2.1-service-oplus.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.1-service-oplus.xml"],
     vendor: true,
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
