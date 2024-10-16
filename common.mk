@@ -16,10 +16,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Device-specific background service
-PRODUCT_PACKAGES += \
-    OssiDeviceService
-
 # Always use GPU for screen compositing
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_hwc_overlays=1
