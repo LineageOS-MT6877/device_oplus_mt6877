@@ -1,2 +1,0 @@
-allow hal_nfc_default device:chr_file { read write };
-allow hal_nfc_default device:chr_file { open };
