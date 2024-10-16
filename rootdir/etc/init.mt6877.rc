@@ -80,15 +80,11 @@ on init
     chmod 0664 /proc/charger/reserve_soc_debug
     write /sys/class/oplus_chg/battery/fast_charge 1
 
-
-
 on late-init
     # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
 
 on charger
-    exec /system/bin/e2fsck -f -p /dev/block/by-name/cache
-    mount ext4 /dev/block/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
@@ -115,12 +111,7 @@ on charger
 
     start fuelgauged
     start fuelgauged_nvram
-
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
-
-    start vendor.light-default
+    
     # switch to sched-dvfs
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
@@ -1029,3 +1020,13 @@ service fuelgauged_nvram /vendor/bin/fuelgauged_nvram
     user system
     group system
     oneshot
+    
+service charger /system/bin/charger
+    class charger
+    user system
+    group system graphics wakelock input
+    capabilities SYS_BOOT
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    file /sys/fs/pstore/console-ramoops r
+    file /proc/last_kmsg r
