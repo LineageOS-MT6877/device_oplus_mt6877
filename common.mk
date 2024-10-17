@@ -290,19 +290,18 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.1.vendor
     
 # Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-derp
-
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-derp
-
+    $(LOCAL_PATH)/overlay-lineage \
+    $(LOCAL_PATH)/overlay-crdroid
+    
+PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
-    WifiOverlay \
-    TetheringConfigOverlay \
-    CarrierConfigOverlay
+    CarrierConfigResCommon \
+    FrameworksResTarget \
+    OPlusFrameworksResCommon \
+    OPlusSettingsResCommon \
+    OPlusSystemUIResCommon \
+    WifiResTarget
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -443,8 +442,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     $(DEVICE_PATH) \
     hardware/mediatek \
-    hardware/oplus \
-    hardware/google/pixel
+    hardware/oplus
 
 # Thermal
 PRODUCT_PACKAGES += \
