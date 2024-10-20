@@ -301,7 +301,9 @@ PRODUCT_PACKAGES += \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \
-    WifiResTarget
+    WifiOverlay \
+    TelephonyOverlay \
+    TetheringConfigOverlay
 
 # Permissions
 PRODUCT_COPY_FILES += \

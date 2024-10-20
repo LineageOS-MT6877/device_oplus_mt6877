@@ -18,44 +18,12 @@
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Telephony qualified networks service package name to bind to by default. -->
-    <string name="config_qualified_networks_service_package" translatable="false">vendor.qti.iwlan</string>
-
-    <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
-         empty string is passed in -->
-    <string name="config_wlan_data_service_package" translatable="false">vendor.qti.iwlan</string>
-
-    <!-- IWLAN network service package name to bind to by default. If none is specified in an overlay, an
-         empty string is passed in -->
-    <string name="config_wlan_network_service_package" translatable="false">vendor.qti.iwlan</string>
-
-    <!-- Default files to pin via Pinner Service -->
-    <string-array name="config_defaultPinnerServiceFiles">
-        <item>/system/framework/arm64/boot-framework.oat</item>
-        <item>/system/framework/arm/boot-framework.oat</item>
-        <item>/apex/com.android.art/javalib/arm64/boot-core-libart.oat</item>
-        <item>/apex/com.android.art/javalib/arm/boot-core-libart.oat</item>
-        <item>/apex/com.android.art/javalib/arm64/boot-okhttp.oat</item>
-        <item>/apex/com.android.art/javalib/arm/boot-okhttp.oat</item>
-        <item>/apex/com.android.art/javalib/arm64/boot.vdex</item>
-        <item>/apex/com.android.art/javalib/arm/boot.vdex</item>
-        <item>/apex/com.android.art/javalib/arm64/boot-core-libart.vdex</item>
-        <item>/apex/com.android.art/javalib/arm/boot-core-libart.vdex</item>
-        <item>/apex/com.android.art/javalib/arm64/boot-core-libart.art</item>
-        <item>/apex/com.android.art/javalib/arm/boot-core-libart.art</item>
-        <item>/system/framework/framework-res.apk</item>
-        <item>/system/lib64/libhwui.so</item>
-        <item>/system/lib/libhwui.so</item>
-        <item>/system/framework/boot-framework.vdex</item>
-        <item>/system/framework/oat/arm64/services.vdex</item>
-        <item>/system/framework/oat/arm64/services.odex</item>
-        <item>/apex/com.android.art/javalib/arm64/boot.oat</item>
-        <item>/apex/com.android.art/javalib/arm/boot.oat</item>
-        <item>/system/framework/telephony-common.jar</item>
-        <item>/system/framework/arm64/boot-telephony-common.art</item>
-        <item>/system/lib64/libsurfaceflinger.so</item>
-        <item>/apex/com.android.art/javalib/core-oj.jar</item>
-        <item>/apex/com.android.art/javalib/core-libart.jar</item>
+    <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/framework.jar"</item>
+        <item>"/system/framework/services.jar"</item>
+        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/system/bin/surfaceflinger"</item>
     </string-array>
 
      <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
@@ -71,5 +39,13 @@
 
      <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
      <bool name="config_telephony5gNonStandalone">true</bool>
+     
+     <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">true</bool>
+
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/oplus_chg/battery/mmi_charging_enable</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
 
 </resources>
