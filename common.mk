@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+COMMON_PATH := device/oplus/mt6877-common
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
@@ -286,20 +288,27 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.1.vendor
     
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage \
-    $(LOCAL_PATH)/overlay-crdroid
-    
-PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
-    CarrierConfigResCommon \
-    FrameworksResTarget \
-    OPlusFrameworksResCommon \
-    OPlusSettingsResCommon \
-    OPlusSystemUIResCommon \
-    WifiOverlay \
+    FrameworkResOverlayPlatform \
+    SystemUIOverlayPlatform \
+    SettingsOverlayPlatform \
     TelephonyOverlay \
-    TetheringConfigOverlay
+    CarrierConfigOverlay
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
+# Enforce RRO targets
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+# RRO
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay \
+    DozeOverlaySystem \
+    DozeOverlaySystemUI \
+    OplusDozeOverlay \
+    OPlusSettingsResTarget
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -389,24 +398,23 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt6877.ramdisk \
-    fstab.mt6877 \
     init.connectivity.common.rc \
+    init.recovery.mt6877.rc \
     init.connectivity.rc \
-    init_connectivity.rc \
     init.modem.rc \
+    init.oplus.rc \
     init.mt6877.rc \
     init.mt6877.usb.rc \
+    init.mt6877.power.rc \
     init.project.rc \
     init.sensor_2_0.rc \
     init.target.rc \
-    ueventd.mtk.rc \
+    init_conninfra.rc \
+    fstab.mt6877 \
+    fstab.mt6877.ramdisk \
     ueventd.oplus.rc \
+    ueventd.mtk.rc
 
-# Fastboot
-PRODUCT_PACKAGES += \
-    init.recovery.mt6877.rc
-    
 # Secure Element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
