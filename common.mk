@@ -18,12 +18,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Always use GPU for screen compositing
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_hwc_overlays=1
-
-# Always use scudo for memory allocator
-PRODUCT_USE_SCUDO := true
+# Vendor Log Tag
+include $(COMMON_PATH)/configs/props/logtag.mk
 
 # Audio
 PRODUCT_PACKAGES += \
